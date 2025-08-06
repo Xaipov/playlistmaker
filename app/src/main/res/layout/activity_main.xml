@@ -15,7 +15,8 @@
         android:paddingTop="24dp"
         android:paddingStart="16dp"
         android:textColor="@color/white"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        android:fontFamily="@font/ys_text_medium"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/SearchCard"
@@ -33,6 +34,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textSize="20sp"
+            android:fontFamily="@font/ys_text_medium"
             android:textColor="@color/black"
             android:text="@string/search"
             android:drawableTint="@color/black" />
@@ -57,6 +59,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:text="@string/medialibrary"
+            android:fontFamily="@font/ys_text_medium"
             android:drawableTint="@color/black" />
 
     </androidx.cardview.widget.CardView>
@@ -79,6 +82,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:text="@string/settings"
+            android:fontFamily="@font/ys_text_medium"
             android:drawableTint="@color/black" />
 
     </androidx.cardview.widget.CardView>

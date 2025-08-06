@@ -5,4 +5,7 @@
     <string name="medialibrary">Медиатека</string>
     <string name="settings">Настройки</string>
     <string name="search">Поиск</string>
+    <string name="Night_mode">Темная тема</string>
+    <string name="share">Поделиться приложением</string>
+    <string name="User_Argreement">Пользовательское соглашение</string>
 </resources>
