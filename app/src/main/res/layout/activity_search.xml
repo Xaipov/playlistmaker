@@ -16,16 +16,15 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/arrow_back"
-        android:tint="@color/black"
         android:backgroundTint="@color/white"
-        >
+        app:tint="@color/black">
     </ImageButton>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Упс... Это еще не допилено"
+        android:text="@string/Oops"
         android:textSize="24sp"/>
 
 </LinearLayout>
