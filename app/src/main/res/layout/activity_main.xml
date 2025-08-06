@@ -34,7 +34,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:text="Поиск"
+            android:text="@string/search"
             android:drawableTint="@color/black" />
 
     </androidx.cardview.widget.CardView>
@@ -56,7 +56,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:text="Медиатека"
+            android:text="@string/medialibrary"
             android:drawableTint="@color/black" />
 
     </androidx.cardview.widget.CardView>
@@ -78,7 +78,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:text="Настройки"
+            android:text="@string/settings"
             android:drawableTint="@color/black" />
 
     </androidx.cardview.widget.CardView>

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">playlistmaker</string>
     <string name="MediaLibrary">Медиатека</string>
-    <string name="Find">Поиск</string>
     <string name="Oops">Упс... Это еще не допилено</string>
+    <string name="medialibrary">Медиатека</string>
+    <string name="settings">Настройки</string>
+    <string name="search">Поиск</string>
 </resources>
