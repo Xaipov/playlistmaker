@@ -1,4 +1,4 @@
- package com.example.playlistmaker
+package com.example.playlistmaker
 
 import android.renderscript.ScriptGroup.Binding
 import com.example.playlistmaker.databinding.ActivitySettingsBinding
@@ -10,11 +10,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
-import com.example.playlistmaker.databinding.ActivitySearchBinding
+import com.example.playlistmaker.databinding.ActivityMedialibraryBinding
 
-class SearchActivity : AppCompatActivity() {
+class MediaLibraryActivity : AppCompatActivity() {
 
-    private var _binding: ActivitySearchBinding? = null
+    private var _binding: ActivityMedialibraryBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +22,7 @@ class SearchActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
 
-        _binding = ActivitySearchBinding.inflate(layoutInflater)
+        _binding = ActivityMedialibraryBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
 
