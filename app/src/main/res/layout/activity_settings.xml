@@ -10,40 +10,52 @@
     tools:context=".SettingsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:id="@+id/backCard"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="6dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/item_padding"
         app:cardBackgroundColor="@color/white">
 
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/arrow_back"
+            tools:ignore="MissingConstraints"></TextView>
+
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/arrow_back"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/ys_text_regular"
             android:gravity="center_vertical"
             android:paddingTop="10dp"
             android:text="@string/settings"
-            android:fontFamily="@font/ys_text_regular"
             android:textColor="@color/black"
-            >
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            tools:layout_editor_absoluteY="3dp"
+            tools:ignore="MissingConstraints">
 
         </com.google.android.material.textview.MaterialTextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp">
+
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginStart="@dimen/item_padding"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5">>
+            app:layout_constraintVertical_bias="0.5"
+            >
 
             <Switch
                 android:id="@+id/switch_bottom_theme"
@@ -51,6 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:checked="true"
+                android:thumbTint="@color/cyan"
+                android:trackTint="@color/lightblue"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -60,30 +74,26 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Night_mode"
                 android:textColor="@color/black"
+                android:textSize="@dimen/item_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.512"
-                tools:layout_editor_absoluteX="2dp"
-                android:textSize="16dp"
                 android:fontFamily="@font/ys_text_regular"
                 tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.cardview.widget.CardView>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp">
+        android:layout_marginStart="@dimen/item_padding">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="@string/share"
-            android:textSize="16dp"
+            android:textSize="@dimen/item_text_size"
             android:textColor="@color/black"
             android:fontFamily="@font/ys_text_regular"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -105,20 +115,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/item_padding"
         android:layout_marginTop="2dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:gravity="center_vertical"
-            android:text="Написать в поддержку"
-            android:textColor="@color/black"
-            android:textSize="16dp"
             android:fontFamily="@font/ys_text_regular"
+            android:gravity="center_vertical"
+            android:text="@string/support"
+            android:textColor="@color/black"
+            android:textSize="@dimen/item_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -135,7 +145,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/item_padding"
         android:layout_marginTop="2dp">
 
         <TextView
@@ -146,9 +156,10 @@
             android:text="@string/User_Argreement"
             android:textColor="@color/black"
             android:fontFamily="@font/ys_text_regular"
-            android:textSize="16dp"
+            android:textSize="@dimen/item_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:layout_width="wrap_content"

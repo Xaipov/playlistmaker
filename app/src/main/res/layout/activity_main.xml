@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/blue"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:paddingTop="24dp"
         android:paddingStart="16dp"
         android:textColor="@color/white"
         android:textSize="22sp"
@@ -21,10 +21,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/SearchCard"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:cardCornerRadius="24dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/radius"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         app:cardBackgroundColor="@color/white">
 
         <com.google.android.material.textview.MaterialTextView
@@ -44,10 +45,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/medialibraryCard"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:cardCornerRadius="24dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/radius"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:cardBackgroundColor="@color/white">
 
         <com.google.android.material.textview.MaterialTextView
@@ -67,10 +69,12 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/SettingsCard"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:cardCornerRadius="24dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/radius"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/bottom_padding"
         app:cardBackgroundColor="@color/white">
 
         <com.google.android.material.textview.MaterialTextView
