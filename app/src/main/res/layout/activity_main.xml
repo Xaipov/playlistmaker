@@ -31,14 +31,14 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:drawableStartCompat="@drawable/search"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:drawableTint="@color/black"
             android:fontFamily="@font/ys_text_medium"
-            android:textColor="@color/black"
+            android:gravity="center"
             android:text="@string/search"
-            android:drawableTint="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:drawableStartCompat="@drawable/search" />
 
     </androidx.cardview.widget.CardView>
 
