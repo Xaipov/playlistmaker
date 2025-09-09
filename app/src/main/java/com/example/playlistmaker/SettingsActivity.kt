@@ -21,10 +21,7 @@ class SettingsActivity : AppCompatActivity() {
         _binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
 
@@ -60,25 +57,25 @@ class SettingsActivity : AppCompatActivity() {
             val shareIntent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
             }
-            val chooser = Intent.createChooser(shareIntent, "Поделиться через")
+            val chooser = Intent.createChooser(shareIntent, getString(R.string.share_APK))
             startActivity(chooser)
         }
         binding.supportButton.setOnClickListener {
-            val recipient = arrayOf("Dr.Gepard0205@yandex.ru") // мой адрес
-            val subject = "Сообщение разработчикам и разработчицам приложения Playlist Maker"
-            val body = "Спасибо разработчикам и разработчицам за крутое приложение!"
+            val recipient = arrayOf(getString(R.string.Developermail))
+            val subject = getString(R.string.subjectmail)
+            val body = getString(R.string.bodymail)
 
             val intent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:")
+                data = Uri.parse(getString(R.string.mailto))
                 putExtra(Intent.EXTRA_EMAIL, recipient)
                 putExtra(Intent.EXTRA_SUBJECT, subject)
                 putExtra(Intent.EXTRA_TEXT, body)
             }
 
-            startActivity(Intent.createChooser(intent, "Выберите почтовое приложение"))
+            startActivity(Intent.createChooser(intent, getString(R.string.select_mail)))
         }
         binding.termsButton.setOnClickListener {
-            val termsUrl = "https://yandex.ru/legal/practicum_offer/ru/"
+            val termsUrl = getString(R.string.terms)
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(termsUrl))
 
             // Запускаем браузер

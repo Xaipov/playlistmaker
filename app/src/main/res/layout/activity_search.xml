@@ -60,10 +60,11 @@
             android:layout_marginEnd="12dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/cancel_24dp"
-            android:tint="@color/hardgray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/searchEditText"
-            app:layout_constraintTop_toTopOf="parent"></ImageButton>
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/hardgray"></ImageButton>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

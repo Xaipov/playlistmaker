@@ -9,4 +9,11 @@
     <string name="share">Поделиться приложением</string>
     <string name="User_Argreement">Пользовательское соглашение</string>
     <string name="support">Написать в поддержку</string>
+    <string name="subjectmail">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="bodymail">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+    <string name="Developermail">Dr.Gepard0205@yandex.ru</string>
+    <string name="terms">https://yandex.ru/legal/practicum_offer/ru/</string>
+    <string name="share_APK">Share APK</string>
+    <string name="select_mail">Выберите почтовое приложение</string>
+    <string name="mailto">mailto:</string>
 </resources>

@@ -1,7 +1,6 @@
 package com.example.playlistmaker
 
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,9 +31,6 @@ class MediaLibraryActivity : AppCompatActivity() {
 
 
         binding.backButton.setOnClickListener {
-
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }
