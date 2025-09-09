@@ -1,15 +1,9 @@
- package com.example.playlistmaker
-
-import android.renderscript.ScriptGroup.Binding
-import com.example.playlistmaker.databinding.ActivitySettingsBinding
-
+package com.example.playlistmaker
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
-import androidx.core.view.ViewCompat
 import com.example.playlistmaker.databinding.ActivitySearchBinding
 
 class SearchActivity : AppCompatActivity() {
@@ -21,22 +15,35 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-
         _binding = ActivitySearchBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
+        setContentView(binding.root)
 
-
-
-        binding.back.setOnClickListener {
+        // Кнопка "Назад"
+        binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        // Восстанавливаем текст после пересоздания Activity
+        savedInstanceState?.getString("search_query")?.let { query ->
+            binding.searchEditText.setText(query)
+        }
+
+        // Кнопка очистки текста (всегда активна)
+        binding.clearButton.setOnClickListener {
+            binding.searchEditText.text.clear()
         }
     }
+
+    // Сохраняем текст при пересоздании Activity
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("search_query", binding.searchEditText.text.toString())
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-
-
 }
-

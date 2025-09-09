@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FFFFFF</color>
+    <color name="blacktext">#FF000000</color>
+    <color name="whitecard">#FFFFFF</color>
+    <color name="white">#121212</color>
+    <color name="gray">#D0D0D0</color>
+    <color name="blue">#121212</color>
+    <color name="blueswitch">#3772e7</color>
+    <color name="lightgray">#737373</color>
+    <color name="hardgray">#2C2C2C</color>
+    <color name="YPlightgray">#FFFFFF</color>
+    <color name="cyan">#00F4CE</color>
+    <color name="lightblue">#6FC0FA</color>
+</resources>

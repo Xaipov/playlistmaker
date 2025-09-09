@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="CardViewTemplateMain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="cardCornerRadius">@dimen/radius</item>
+        <item name="cardBackgroundColor">@color/whitecard</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CardTextTemplate">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/blacktext</item>
+        <item name="android:fontFamily">@font/ys_text_medium</item>
+    </style>
+
+    <style name="TitleTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SearchEditTextStyle">
+        <item name="android:layout_marginTop">@dimen/item_padding</item>
+        <item name="android:background">@drawable/search_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+
+
+        <item name="android:drawableStart">@drawable/search</item>
+        <item name="android:drawableTint">@color/hardgray</item>
+        <item name="android:drawablePadding">8dp</item>
+
+
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+
+
+        <item name="android:hint">@string/search</item>
+        <item name="android:textSize">@dimen/item_text_size</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@color/hardgray</item>
+
+
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+</resources>
