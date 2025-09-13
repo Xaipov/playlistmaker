@@ -38,7 +38,7 @@
     </style>
 
     <style name="SearchEditTextStyle">
-        <item name="android:layout_marginTop">@dimen/item_padding</item>
+        <item name="android:layout_marginTop">16dp</item>
         <item name="android:background">@drawable/search_background</item>
         <item name="android:fontFamily">@font/ys_text_regular</item>
         <item name="android:layout_width">match_parent</item>

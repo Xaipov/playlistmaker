@@ -38,10 +38,9 @@
 
     <FrameLayout
         android:id="@+id/searchContainer"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/item_padding"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="@dimen/item_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,12 +50,14 @@
             android:id="@+id/searchEditText"
             style="@style/SearchEditTextStyle"
             android:layout_width="match_parent"
-            android:layout_height="48dp" />
+            android:layout_height="36dp" />
 
         <ImageButton
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:id="@+id/clearButton"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="end|center_vertical"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/cancel_24dp"
