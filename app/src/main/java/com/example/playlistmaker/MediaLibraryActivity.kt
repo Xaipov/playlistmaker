@@ -1,15 +1,10 @@
 package com.example.playlistmaker
 
-import android.renderscript.ScriptGroup.Binding
-import com.example.playlistmaker.databinding.ActivitySettingsBinding
 
-
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
-import androidx.core.view.ViewCompat
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.playlistmaker.databinding.ActivityMedialibraryBinding
 
 class MediaLibraryActivity : AppCompatActivity() {
@@ -18,18 +13,25 @@ class MediaLibraryActivity : AppCompatActivity() {
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val sharedPref = getSharedPreferences("settings", MODE_PRIVATE)
+        val isDarkMode = sharedPref.getBoolean("dark_mode", false)
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
 
         _binding = ActivityMedialibraryBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
+        setContentView(binding.root)
 
 
 
-        binding.back.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        binding.backButton.setOnClickListener {
+            finish()
         }
     }
     override fun onDestroy() {

@@ -1,179 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/settings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".SettingsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
-        android:id="@+id/backCard"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="@dimen/item_padding"
-        app:cardBackgroundColor="@color/white">
-
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/item_padding"
+        android:paddingTop="@dimen/screen_padding"
+        android:paddingEnd="@dimen/item_padding">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:drawableStart="@drawable/arrow_back"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:drawableTint="@color/black"
+            android:gravity="center"
+            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"></TextView>
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView"
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/ys_text_regular"
+            android:layout_marginStart="@dimen/item_padding"
             android:gravity="center_vertical"
-            android:paddingTop="10dp"
+            android:fontFamily="@font/ys_text_regular"
+            android:textSize="@dimen/title_text_size"
             android:text="@string/settings"
             android:textColor="@color/black"
-            android:textSize="@dimen/title_text_size"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="3dp">
-
-        </com.google.android.material.textview.MaterialTextView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginStart="@dimen/item_padding"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            >
-
-            <Switch
-                android:id="@+id/switch_bottom_theme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:checked="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Night_mode"
-                android:textColor="@color/black"
-                android:textSize="@dimen/item_text_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:fontFamily="@font/ys_text_regular"
-                tools:ignore="MissingConstraints" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+            app:layout_constraintStart_toEndOf="@id/backButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/switchContainer"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="@dimen/item_padding">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingStart="@dimen/item_padding"
+        android:paddingEnd="@dimen/item_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/nightModeText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:fontFamily="@font/ys_text_regular"
+            android:text="@string/Night_mode"
+            android:textColor="@color/black"
+            android:textSize="@dimen/item_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Switch
+            android:id="@+id/switch_bottom_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:thumbTint="@color/switch_thumb_color"
+            android:trackTint="@color/switch_track_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/shareButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="@dimen/item_padding"
+        android:paddingEnd="@dimen/item_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchContainer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/share"
             android:textSize="@dimen/item_text_size"
             android:textColor="@color/black"
             android:fontFamily="@font/ys_text_regular"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:gravity="center_vertical"
-            app:drawableStartCompat="@drawable/share_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
+            android:drawableStart="@drawable/share_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
             app:drawableTint="@color/gray"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/supportButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="@dimen/item_padding"
-        android:layout_marginTop="2dp">
+        android:layout_marginTop="2dp"
+        android:paddingStart="@dimen/item_padding"
+        android:paddingEnd="@dimen/item_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shareButton">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ys_text_regular"
-            android:gravity="center_vertical"
             android:text="@string/support"
             android:textColor="@color/black"
             android:textSize="@dimen/item_text_size"
+            android:fontFamily="@font/ys_text_regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:drawableStart="@drawable/support_agent_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
-            android:gravity="center_vertical"
             app:drawableTint="@color/gray"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/termsButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="@dimen/item_padding"
-        android:layout_marginTop="2dp">
+        android:layout_marginTop="2dp"
+        android:paddingStart="@dimen/item_padding"
+        android:paddingEnd="@dimen/item_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/supportButton">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:gravity="center_vertical"
             android:text="@string/User_Argreement"
             android:textColor="@color/black"
+            android:layout_marginStart="5dp"
             android:fontFamily="@font/ys_text_regular"
             android:textSize="@dimen/item_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:drawableStart="@drawable/arrow_forward_ios_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
             android:drawableTint="@color/gray"
-            android:gravity="center_vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:drawableStart="@drawable/arrow_forward_ios_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
