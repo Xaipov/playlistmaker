@@ -6,22 +6,32 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.playlistmaker.databinding.ActivitySearchBinding
 
 class SearchActivity : AppCompatActivity() {
 
-    private var _binding: ActivitySearchBinding? = null
-    private val binding get() = _binding!!
-
+    private lateinit var binding: ActivitySearchBinding
+    private lateinit var trackAdapter: TrackAdapter
     private var searchQuery: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        binding = ActivitySearchBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        _binding = ActivitySearchBinding.inflate(layoutInflater)
+        trackAdapter = TrackAdapter()
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = trackAdapter
+
+        // Демо-треки добавляем внутри onCreate, а не прямо в классе
+        val demoTracks = listOf(
+            Track("Song 1", "Artist 1", "3:45", "https://via.placeholder.com/150"),
+            Track("Song 2", "Artist 2", "2:30", "https://via.placeholder.com/150"),
+            Track("Song 3", "Artist 3", "4:10", "https://via.placeholder.com/150")
+        )
+        trackAdapter.setTracks(demoTracks)
         setContentView(binding.root)
 
 
@@ -58,18 +68,4 @@ class SearchActivity : AppCompatActivity() {
         outState.putString("search_query", searchQuery) // сохраняем переменную
     }
 
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        savedInstanceState.getString("search_query")?.let {
-            searchQuery = it                 // восстанавливаем переменную
-            binding.searchEditText.setText(it) // восстанавливаем текст в поле
-        }
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
 }
